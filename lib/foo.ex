@@ -9,7 +9,7 @@ defmodule Foo.Application do
       Plug.Adapters.Cowboy.child_spec(:http, Foo.Router, [], port: port)
     ]
 
-    Logger.info "Started application"
+    Logger.info "Application running on port " <> (to_string port)
 
     Supervisor.start_link(children, strategy: :one_for_one)
   end
